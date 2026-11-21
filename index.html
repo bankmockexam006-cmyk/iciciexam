@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102a43">
+  <title>BUZZIELS | World Class Assessment 2026</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">I</div>
+    <div><div class="brand">ICICI BANK EXAM</div><div class="brand-sub">WORLD CLASS ASSESSMENT 2026</div></div>
+    <div class="exam-code"></div>
+  </header>
+
+  <main class="container">
+    <section id="loginScreen" class="panel login-panel">
+      <div class="eyebrow">ADVANCED INTELLIGENCE &amp; PROFESSIONAL COMPETENCY</div>
+      <h1>Candidate Login</h1>
+      <p class="muted">Enter your details to access the examination portal.</p>
+      <form id="loginForm">
+        <label for="candidateName">Full name</label>
+        <input id="candidateName" name="candidateName" type="text" autocomplete="name" placeholder="Enter your full name" required maxlength="100">
+        <label for="candidateEmail">Email address</label>
+        <input id="candidateEmail" name="candidateEmail" type="email" autocomplete="email" placeholder="name@example.com" required maxlength="150">
+        <label for="candidatePhone">Phone number</label>
+        <input id="candidatePhone" name="candidatePhone" type="tel" autocomplete="tel" inputmode="tel" placeholder="Enter your phone number" required minlength="8" maxlength="16">
+        <button class="primary-btn full" type="submit">Continue to instructions</button>
+      </form>
+      <div class="exam-facts">
+        <div><strong>100</strong><span>Questions</span></div>
+        <div><strong>75 min</strong><span>Duration</span></div>
+        <div><strong>100</strong><span>Maximum marks</span></div>
+      </div>
+      <p class="tiny muted">Scheduled: 21 November 2026 · 12:15 PM to 1:30 PM IST</p>
+    </section>
+
+    <section id="instructionsScreen" class="panel hidden">
+      <div class="eyebrow">CANDIDATE INSTRUCTIONS</div>
+      <h1>Before you begin</h1>
+      <div class="candidate-chip" id="candidateSummary"></div>
+      <ul class="instructions">
+        <li>This examination contains 100 multiple-choice questions.</li>
+        <li>Select one option (A, B, C or D) for each question.</li>
+        <li>Correct answer: +1 mark. Incorrect answer: −0.25 mark. Unanswered: 0.</li>
+        <li>The examination opens at 12:15 PM and expires automatically at 1:30 PM IST on 21 November 2026.</li>
+        <li>Use the single Submit Examination button at the bottom when you finish.</li>
+      </ul>
+      <div id="scheduleStatus" class="schedule-box"></div>
+      <button id="enterExamBtn" class="primary-btn full" type="button" disabled>Enter Examination</button>
+      <p class="tiny muted">The exam will become available at the scheduled start time.</p>
+    </section>
+
+    <section id="examScreen" class="hidden">
+      <div class="exam-heading panel">
+        <div><div class="eyebrow">Online · LIVE ASSESSMENT</div><h1>World Class Assessment</h1><p class="muted" id="welcomeLine"></p></div>
+        <div class="timer-card"><span>TIME REMAINING</span><strong id="timer">75:00</strong><small>Expiry: 1:30 PM IST</small></div>
+      </div>
+      <div class="progress-wrap"><div class="progress-label"><span id="answeredCount">0 of 100 answered</span><span id="progressPercent">0%</span></div><div class="progress-track"><div id="progressBar"></div></div></div>
+      <div id="questionContainer"></div>
+      <div class="submit-panel panel">
+        <div><strong>Ready to finish?</strong><p class="muted">Review your selected answers, then submit once.</p></div>
+        <button id="submitBtn" class="submit-btn" type="button">Submit Examination</button>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="panel hidden">
+      <div class="result-icon">✓</div>
+      <div class="eyebrow">EXAMINATION COMPLETED</div>
+      <h1 id="resultTitle">Your result</h1>
+      <p id="resultCandidate" class="muted"></p>
+      <div class="score-card"><span>NET SCORE</span><strong id="netScore">0.00</strong><small>out of 100 marks</small></div>
+      <div class="result-grid">
+        <div><strong id="correctCount">0</strong><span>Correct</span></div>
+        <div><strong id="wrongCount">0</strong><span>Incorrect</span></div>
+        <div><strong id="unansweredCount">0</strong><span>Unanswered</span></div>
+      </div>
+      <div id="passStatus" class="pass-status"></div>
+      <p class="tiny muted">Your result is displayed on this device.</p>
+  
+    </section>
+
+    <footer>© 2026 · All rights reserved</footer>
+  </main>
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
